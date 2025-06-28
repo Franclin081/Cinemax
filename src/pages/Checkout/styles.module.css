@@ -1,0 +1,312 @@
+.container {
+  background-color: #041218;
+  min-height: 100vh;
+  padding: 2rem 3rem;
+  color: #e1eaff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 25%, #2563eb 50%, #1d4ed8 75%, #1e40af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.movieTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 25%, #2563eb 50%, #1d4ed8 75%, #1e40af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.horario {
+  font-size: 1.2rem;
+  color: #cbd5ff;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.poster {
+  width: 200px;
+  border-radius: 12px;
+}
+
+
+.seatsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #11172b;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #1e90ff88;
+  max-width: 760px;
+  width: 100%;
+  align-items: center;
+  user-select: none;
+}
+
+
+.seatRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+
+.seat {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 5px #1e90ff88;
+}
+
+
+.available {
+  background-color: #1e90ff;
+}
+
+.available:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 10px #0056b388;
+}
+
+
+.selected {
+  background-color: #33ccff;
+  box-shadow: 0 0 15px #33ccffcc;
+}
+
+
+.occupied {
+  background-color: #444a66;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #999;
+}
+
+
+.screen {
+  width: 80%;
+  max-width: 700px;
+  height: 40px;
+  background: linear-gradient(90deg, #1e90ff 0%, #33ccff 50%, #1e90ff 100%);
+  border-radius: 20px;
+  box-shadow: 0 0 15px #1e90ffcc;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 40px;
+  margin: 1.5rem 0 0 0;
+  letter-spacing: 0.4em;
+}
+
+
+.confirmBtn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #1e90ff 0%, #3b82f6 25%, #2563eb 50%, #1d4ed8 75%, #1e40af 100%);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px #1e90ffcc;
+  transition: background-color 0.3s ease;
+}
+
+.confirmBtn:hover {
+  background-color: #0066cc;
+  box-shadow: 0 0 20px #0066cccc;
+}
+
+.confirmBtn:active {
+  background-color: #004c99;
+  box-shadow: 0 0 10px #004c9988;
+}
+
+
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #a0baff;
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+}
+
+.input,
+.select {
+  margin-top: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #1e90ff;
+  background-color: #11172b;
+  color: #e1eaff;
+  font-family: 'Montserrat', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.input::placeholder {
+  color: #7f94c0;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #33ccff;
+  box-shadow: 0 0 8px #33ccffcc;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .seat {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .seatsContainer {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .form {
+    max-width: 100%;
+  }
+}
+.backBtn {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #041218;
+  border: 2px solid #1e90ff88; 
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.backBtn::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #0a0f1a;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.backBtn:hover {
+ 
+  transform: scale(1.04);
+
+}
+
+.backBtn:active {
+  opacity: 0.8;
+}
+
+.lastReservationBtn {
+  position: absolute;
+  top: 6.5rem;
+  left: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+  opacity: 0.9;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 20%, #334155 40%, #475569 60%, #64748b 80%, #94a3b8 100%);
+  background-clip: border-box;
+  background-origin: border-box;
+}
+
+.lastReservationBtn::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #0a0f1a;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.lastReservationBtn:hover {
+   opacity: 1;
+  transform: scale(1.04);
+
+}
+
+.lastReservationBtn:active {
+  opacity: 0.8;
+}
+
+.backHomeBtn {
+  margin-top: 2rem;
+  padding: 0.7rem 1.6rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #041218;
+  border: 2px solid #1e90ff88; 
+  color: white;
+  transition: background-color 0.3s ease;
+
+}
+
+.backHomeBtn:hover {
+  transform: scale(1.04);
+}
+
+.backHomeBtn:active {
+  background-color: #004c99;
+  box-shadow: 0 0 8px #004c9988;
+}

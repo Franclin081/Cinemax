@@ -1,0 +1,40 @@
+.backBtn {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #041218;
+  border: 2px solid #1e90ff88; 
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.backBtn::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #0a0f1a;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.backBtn:hover {
+ 
+  transform: scale(1.04);
+
+}
+
+.backBtn:active {
+  opacity: 0.8;
+}

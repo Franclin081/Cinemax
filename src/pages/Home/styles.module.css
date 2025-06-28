@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #4299e1 0%, #1e90ff 50%, #0066cc 100%);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ffffff, transparent);
+  border-radius: 2px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.lastReservationBtn, 
+.avaliacoesBtn {
+  padding: 0.8rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.lastReservationBtn::before,
+.avaliacoesBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.lastReservationBtn:hover::before,
+.avaliacoesBtn:hover::before {
+  left: 100%;
+}
+
+.lastReservationBtn:hover, 
+.avaliacoesBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  scale: 1.05;
+}
+
+.lastReservationBtn:active, 
+.avaliacoesBtn:active {
+  transform: translateY(-1px);
+  scale: 0.98;
+}
+
+.subHeader {
+  width: 100%;
+  max-width: 1200px;
+  margin: 8rem auto 3rem auto;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #f8fafc;
+  text-align: center;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.subHeader::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #4299e1, #1e90ff, #0066cc);
+  border-radius: 2px;
+}
+
+.container {
+  background: radial-gradient(ellipse at top, #1a2332 0%, #162b42 50%, #0a1220 100%);
+  min-height: 100vh;
+  padding: 2rem;
+  padding-top: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #f2f4f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="%23ffffff" opacity="0.03"/><circle cx="80" cy="80" r="0.3" fill="%23ffffff" opacity="0.02"/><circle cx="40" cy="60" r="0.4" fill="%23ffffff" opacity="0.025"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 2rem;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.moviesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.movieCard {
+  background-color: #1a2537;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid rgba(66, 153, 225, 0.1);
+}
+
+.movieCard:hover {
+  transform: scale(1.02);
+}
+
+.poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f2f4f8;
+  padding: 1rem;
+  text-align: center;
+  line-height: 1.4;
+  min-height: 48px;
+}
+
+.noPoster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background-color: #1e3a52;
+  color: #7d9cb8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-size: 0.9rem;
+  padding: 1rem;
+}
+
+.message {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #a1b5d8;
+  margin-top: 4rem;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.8;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
