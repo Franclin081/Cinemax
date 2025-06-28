@@ -46,11 +46,12 @@ export default function Avaliacoes() {
         <p className={styles.message}>Nenhuma avaliação encontrada.</p>
       ) : (
         <ul className={styles.lista}>
+
           {avaliacoes.map((avaliacao, idx) => (
             <li key={idx} className={styles.avaliacaoItem}>
               <div className={styles.movieTitle}>{avaliacao.movieTitle}</div>
               <div className={styles.autor}>Avaliado por: {avaliacao.nome}</div>
-              <p className={styles.comentario}>{avaliacao.comentario}</p>
+              <p className={styles.comentario}>{avaliacao.comentario}</p> 
 
          
              

@@ -23,7 +23,7 @@ function Resumo() {
 
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h2>Reserva Confirmada ✅</h2>
+      <h2> Reserva Confirmada ✅ </h2>
       <p><strong>Nome:</strong> {reserva.nome}</p>
       <p><strong>Filme:</strong> {reserva.filme}</p>
       <p><strong>Horário:</strong> {reserva.horario}</p>

@@ -34,7 +34,7 @@ function Home() {
         </button>
 
         <h1>CINEMAX</h1>
-
+        
         <button
           className={styles.avaliacoesBtn}
           onClick={() => navigate('/avaliacoes')}
@@ -43,7 +43,7 @@ function Home() {
         </button>
       </header>
 
-    
+     
       <div className={styles.subHeader}>
         EM CARTAZ
       </div>

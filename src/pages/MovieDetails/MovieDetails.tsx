@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchMovieDetails, fetchMovieVideos } from '../../services/tmdb';
-import type { Movie, Video } from '../../services/tmdb';
+import type { Movie } from '../../services/tmdb';
 import styles from './styles.module.css';
 import BackButton from '../../components/BackButton';
 
+
 function MovieDetails() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [movie, setMovie] = useState<Movie | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [trailerKey, setTrailerKey] = useState<string | null>(null);
+  const { id } = useParams(); //Constante que pega o ID do filme. 
+  const navigate = useNavigate(); //Constante para navegação. 
+  const [movie, setMovie] = useState<Movie | null>(null); //Constante que acessa o Filme da API.
+  const [loading, setLoading] = useState(true); 
+  const [trailerKey, setTrailerKey] = useState<string | null>(null); //Constante que pega a chave ID do trailer. 
 
   useEffect(() => {
     if (id) {
@@ -23,6 +24,7 @@ function MovieDetails() {
           console.error(err);
           setLoading(false);
         });
+//Encontra o vídeo do trailer pelo id e acessa no youtube.
 
       fetchMovieVideos(Number(id))
         .then((videos) => {
@@ -55,9 +57,9 @@ function MovieDetails() {
             alt={movie.title}
             className={styles.poster}
           />
-
+      
           {trailerKey && (
-            <a
+           <a    
               href={`https://www.youtube.com/watch?v=${trailerKey}`}
               target="_blank"
               rel="noopener noreferrer"

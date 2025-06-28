@@ -18,7 +18,7 @@ type Reservation = {
 export default function Reservas() {
   const [reservas, setReservas] = useState<Reservation[]>([]); //Acessa uma array das reservas
   const [avaliandoIndex, setAvaliandoIndex] = useState<number | null>(null); 
-  const [comentarios, setComentarios] = useState<{ [index: number]: string }>({}); //os comentários sã selecionados pelo index do tipo number.
+  const [comentarios, setComentarios] = useState<{ [index: number]: string }>({}); //Constante das avaliações. 
   const navigate = useNavigate();
 
   useEffect(() => {

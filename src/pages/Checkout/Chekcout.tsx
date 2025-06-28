@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from 'react';
 import type { Movie } from '../../services/tmdb';
 import styles from './styles.module.css';
 import BackButton from '../../components/BackButton';
-
+ 
 type LocationState = {
   movie: Movie;
   horario: string;
@@ -26,14 +26,13 @@ function Checkout() {
   const navigate = useNavigate();
 
   const state = useMemo(() => location.state as LocationState | undefined, [location.state]);
-
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
-  const [nome, setNome] = useState('');
-  const [tipoIngresso, setTipoIngresso] = useState<'Inteira' | 'Meia'>('Inteira');
-  const [confirmado, setConfirmado] = useState(false);
-  const [ocupados, setOcupados] = useState<Set<string>>(new Set());
+  const [nome, setNome] = useState(''); //Campo do nome. 
+  const [tipoIngresso, setTipoIngresso] = useState<'Inteira' | 'Meia'>('Inteira'); //O tipo de ingresso. 
+  const [confirmado, setConfirmado] = useState(false); 
+  const [ocupados, setOcupados] = useState<Set<string>>(new Set()); //Mostra os assentos ocupados.
 
-  const precoUnitario = tipoIngresso === 'Inteira' ? 50 : 25;
+  const precoUnitario = tipoIngresso === 'Inteira' ? 50 : 25; //Estabelece do tipo de ingresso. 
   const precoTotal = selectedSeats.length * precoUnitario;
 
   useEffect(() => {
