@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 import trashIcon from '../../assets/lixo.png';
 import starIcon from '../../assets/check.png'; 
 
+//interface da reserva.
 type Reservation = {
   movieTitle: string;
   horario: string;
@@ -13,23 +14,25 @@ type Reservation = {
   tipoIngresso: string;
 };
 
+//função das reservas
 export default function Reservas() {
-  const [reservas, setReservas] = useState<Reservation[]>([]);
-  const [avaliandoIndex, setAvaliandoIndex] = useState<number | null>(null);
-  const [comentarios, setComentarios] = useState<{ [index: number]: string }>({});
+  const [reservas, setReservas] = useState<Reservation[]>([]); //Acessa uma array das reservas
+  const [avaliandoIndex, setAvaliandoIndex] = useState<number | null>(null); 
+  const [comentarios, setComentarios] = useState<{ [index: number]: string }>({}); //os comentários sã selecionados pelo index do tipo number.
   const navigate = useNavigate();
 
   useEffect(() => {
-    const saved = localStorage.getItem('reservas');
+    const saved = localStorage.getItem('reservas'); //o localstorage salva os itens em reservas. 
     if (saved) {
       try {
-        setReservas(JSON.parse(saved));
+        setReservas(JSON.parse(saved)); //salva a interface JSON em reservas.
       } catch {
         setReservas([]);
       }
     }
   }, []);
 
+  //Função pra excluir a reserva
   function handleDelete(index: number) {
     const reservaParaExcluir = reservas[index];
 
@@ -39,8 +42,8 @@ export default function Reservas() {
 
     if (!confirmacao) return;
 
-    const novaLista = reservas.filter((_, i) => i !== index);
-    setReservas(novaLista);
+    const novaLista = reservas.filter((_, i) => i !== index); 
+    setReservas(novaLista); 
     localStorage.setItem('reservas', JSON.stringify(novaLista));
     alert(
       `Reserva excluída com sucesso! Os assentos ${reservaParaExcluir.assentos.join(
@@ -49,6 +52,7 @@ export default function Reservas() {
     );
   }
 
+  //função que inicia a avaliação
   function iniciarAvaliacao(index: number) {
     setAvaliandoIndex(index);
   }

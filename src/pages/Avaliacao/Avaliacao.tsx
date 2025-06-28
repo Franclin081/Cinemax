@@ -52,6 +52,7 @@ export default function Avaliacoes() {
               <div className={styles.autor}>Avaliado por: {avaliacao.nome}</div>
               <p className={styles.comentario}>{avaliacao.comentario}</p>
 
+         
              
               <button
                 className={styles.deleteBtn}

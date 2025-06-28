@@ -2,6 +2,8 @@ const TMDB_API_KEY = '39847edbfca3dbde51d4ad64287be6dd';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 
+//Interface do filme pra mostrar enredo, título, poster, enredo e data. 
+
 export interface Movie {
   id: number;
   title: string;
