@@ -4,6 +4,7 @@ import { fetchNowPlaying } from '../../services/tmdb';
 import type { Movie } from '../../services/tmdb';
 import styles from './styles.module.css';
 
+//Função da página principal que usa array dos filmes
 function Home() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);

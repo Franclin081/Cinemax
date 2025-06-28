@@ -10,6 +10,7 @@ type Avaliacao = {
   comentario: string;
 };
 
+//Função que envia a avaliação. 
 export default function Avaliacoes() {
   const [avaliacoes, setAvaliacoes] = useState<Avaliacao[]>([]);
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export default function Avaliacoes() {
     }
   }, []);
 
+//Função do alert caso a pessoa tenha certeza de deletar a avaiação. 
   function handleDeleteAvaliacao(index: number) {
     const confirmacao = window.confirm('Deseja realmente excluir esta avaliação?');
     if (!confirmacao) return;

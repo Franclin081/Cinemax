@@ -23,7 +23,6 @@ export async function fetchNowPlaying(): Promise<Movie[]> {
   return data.results; // retorna o array de filmes
 }
 
-// 🔍 Busca os detalhes de UM filme, dado o id
 export async function fetchMovieDetails(id: number): Promise<Movie> {
   const response = await fetch(
     `${BASE_URL}/movie/${id}?api_key=${TMDB_API_KEY}&language=pt-BR`
